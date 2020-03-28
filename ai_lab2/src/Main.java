@@ -9,7 +9,7 @@ public class Main {
         Search search = new Search();
         Node solution = search.execute(startNode);
         print(solution);
-        System.out.println("--------------------------------------------------");
+       System.out.println("--------------------------------------------------");
 
     }
     private static void print(Node solution) {
@@ -29,9 +29,14 @@ public class Main {
                 if (node.isGoal()) {
                     System.out.println(node.toString());
                 } else {
+
                     System.out.println(node.toString() );
                 }
             }
         }
+    }
+
+    private  int print() {
+        return 1;
     }
 }

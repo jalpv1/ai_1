@@ -7,6 +7,8 @@ public class VariantsCreator {
     private void createNode(List<Node> successors, Node newNode, Node parentNode) {
         if (newNode.isValid()) {
             newNode.setParentNode(parentNode);
+            //розраховуємо значення функції
+            newNode.countHeuristic(newNode);
             successors.add(newNode);
         }
     }
@@ -110,7 +112,7 @@ public class VariantsCreator {
         return nodes;
     }
 
-    ArrayList<Node> generate(Node node) {
+    ArrayList<Node> generateAll(Node node) {
         ArrayList<Node> nodes = new ArrayList<>();
         if (node.getPos() == Bank.LEFT) {
 //driver person
@@ -168,7 +170,7 @@ public class VariantsCreator {
         }
         return nodes;
     }
-    ArrayList<Node> generateeMPTY(Node node) {
+    ArrayList<Node> generateDriverOne(Node node) {
         ArrayList<Node> nodes = new ArrayList<>();
         if (node.getPos() == Bank.LEFT) {
 //driver person

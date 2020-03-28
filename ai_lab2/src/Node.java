@@ -6,7 +6,7 @@ enum Bank {
     LEFT, RIGHT
 }
 
-public class Node {
+public class Node extends AStarNode implements Comparable<Node> {
     private int peopleLeft;
     private int smallMonkeysLeft;
     private int bigMonkeysLeft;
@@ -37,14 +37,7 @@ public class Node {
     public boolean isValid() {
         if (peopleLeft >= 0 && smallMonkeysLeft >= 0 && bigMonkeysLeft >= 0 && peopleRight >= 0 && smallMonkeysRight >= 0 && bigMonkeysRight >= 0
                 && (peopleLeft == 0 || peopleLeft >= smallMonkeysLeft + bigMonkeysLeft)
-                && (peopleRight == 0||peopleRight >= smallMonkeysRight + bigMonkeysRight) ){
-            return true;
-        }
-        return false;
-    }
-    public boolean isValid1() {
-        if (peopleLeft >= 0 && smallMonkeysLeft >= 0 && bigMonkeysLeft >= 0 && peopleRight >= 0 && smallMonkeysRight >= 0 && bigMonkeysRight >= 0
-                 ){
+                && ((peopleRight == 0)||peopleRight >= smallMonkeysRight + bigMonkeysRight) ){
             return true;
         }
         return false;
@@ -127,15 +120,13 @@ public class Node {
                 + " PR "+peopleRight + "," + " SMR "+ smallMonkeysRight +" BMR "+bigMonkeysRight + " Boat - " + pos + " D "+driver
                 ;
     }
-    /*@Override
-    public String toString() {
-        int ml = smallMonkeysLeft +bigMonkeysLeft;
-        int mr =  smallMonkeysRight +bigMonkeysRight;
-        return "PL " + peopleLeft + "," +" ML " +ml+" -------- "
-                + " PR "+peopleRight + "," + " SMR "+ mr + " Boat - " + pos + " D "+driver
-                ;
-    }
 
-     */
+    @Override
+    public int compareTo(Node o) {
+        if(this.f < o.f){
+            return 1;
+        }
+        return 0;
+    }
 
 }
