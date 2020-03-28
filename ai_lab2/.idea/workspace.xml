@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7247643b-d8c2-4436-a2f3-aa6bba6a420a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AStarNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ai_2/.idea/compiler.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../ai_2/.idea/description.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../ai_2/.idea/encodings.xml" beforeDir="false" />
@@ -25,15 +23,7 @@
       <change beforePath="$PROJECT_DIR$/../ai_2/src/State.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../ai_2/src/StatesGenerator.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../ai_2_1/ai_1/.idea/ai_1.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ai_lab2/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ai_lab2/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ai_lab2/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ai_lab2/Node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ai_lab2/Search.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ai_lab2/Search.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ai_lab2/VariantsCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ai_lab2/VariantsCreator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Search.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VariantsCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VariantsCreator.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,8 +54,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="12" selection-start-line="12" selection-end-line="13" />
+            <state relative-caret-position="187">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1174#1175#0" expanded="true" />
@@ -170,7 +160,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/VariantsCreator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
+            <state relative-caret-position="-279">
               <caret line="179" column="62" lean-forward="true" selection-start-line="179" selection-start-column="62" selection-end-line="179" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -332,18 +322,18 @@
       <option name="presentableId" value="Default" />
       <updated>1585040417790</updated>
       <workItem from="1585040421585" duration="23724000" />
-      <workItem from="1585415512746" duration="10371000" />
+      <workItem from="1585415512746" duration="11039000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34095000" />
+    <option name="totallyTimeSpent" value="34763000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30607286" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20566802" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -476,16 +466,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/VariantsCreator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="179" column="62" lean-forward="true" selection-start-line="179" selection-start-column="62" selection-end-line="179" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Node.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -541,10 +521,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/VariantsCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-279">
+          <caret line="179" column="62" lean-forward="true" selection-start-line="179" selection-start-column="62" selection-end-line="179" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="12" selection-start-line="12" selection-end-line="13" />
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1174#1175#0" expanded="true" />

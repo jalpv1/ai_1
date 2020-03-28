@@ -9,7 +9,6 @@ public class Main {
         Search search = new Search();
         Node solution = search.execute(startNode);
         print(solution);
-       System.out.println("--------------------------------------------------");
 
     }
     private static void print(Node solution) {
