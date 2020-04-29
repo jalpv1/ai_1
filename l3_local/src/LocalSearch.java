@@ -91,7 +91,6 @@ public class LocalSearch {
 
 
                 }
-                Random r = new Random();
                 if (eval(max) < nextEval) {
                     currentNode = max;
                     // nextNode = max;
