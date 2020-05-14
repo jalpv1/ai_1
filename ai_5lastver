@@ -1,0 +1,149 @@
+%solve_astar([2,3,1,left,0,0,0], L)
+start([2,3,1,left,0,0,0]).
+goal([0,0,0,right,2,3,1]).
+
+legal(LittleMonkeyL,PeopleL,BigMonkeyL,LittleMonkeyR,PeopleR,BigMonkeyR) :-
+
+% is this state a legal one?
+	PeopleL>=0, LittleMonkeyL>=0, PeopleR>=0, LittleMonkeyR>=0,
+	(PeopleL>=LittleMonkeyL+ BigMonkeyL;LittleMonkeyL=0),
+	(PeopleR>=LittleMonkeyR + BigMonkeyR; PeopleR =0) .
+
+  %%%%%%%%%%%%%%%%%
+% Possible moves:
+move([LittleMonkeyL,PeopleL,BigMonkeyL,left,LittleMonkeyR,PeopleR,BigMonkeyR],
+     [LittleMonkeyL,PeopleL2,BigMonkeyL,right,LittleMonkeyR,PeopleR2,BigMonkeyR],1):-
+	% Two missionaries cross left to right.
+	PeopleR2 is PeopleR+2,
+	PeopleL2 is PeopleL-2,
+	legal(LittleMonkeyL,PeopleL,BigMonkeyL,LittleMonkeyR,PeopleR,BigMonkeyR).
+
+move([LittleMonkeyL,PeopleL,BigMonkeyL,left,LittleMonkeyR,PeopleR,BigMonkeyR],
+     [LittleMonkeyL2,PeopleL,BigMonkeyL2,right,LittleMonkeyR2,PeopleR,BigMonkeyR2],1):-
+	% Two cannibals cross left to right.
+  % Two hum cross left to right.
+
+	BigMonkeyL2 is BigMonkeyL-1,
+	LittleMonkeyL is LittleMonkeyL-1,
+  BigMonkeyR2 is BigMonkeyR+1,
+  LittleMonkeyR2 is LittleMonkeyR+1,
+	legal(LittleMonkeyL2,PeopleL,BigMonkeyL2,LittleMonkeyR2,PeopleR,BigMonkeyR2).
+
+move([LittleMonkeyL,PeopleL,BigMonkeyL,left,LittleMonkeyR,PeopleR,BigMonkeyR]
+     ,[LittleMonkeyL2,PeopleL2,BigMonkeyL,right,LittleMonkeyR2,PeopleR2,BigMonkeyR],1):-
+	%  One missionary and one cannibal cross left to right.
+  %  One hum and one lmun cross left to right.
+
+	LittleMonkeyR2 is LittleMonkeyR+1,
+	LittleMonkeyL2 is LittleMonkeyL-1,
+	PeopleR2 is PeopleR+1,
+	PeopleL2 is PeopleL-1,
+	legal(LittleMonkeyL2,PeopleL2,BigMonkeyL,LittleMonkeyR2,PeopleR2,BigMonkeyR).
+
+move([LittleMonkeyL,PeopleL,BigMonkeyL,left,LittleMonkeyR,PeopleR,BigMonkeyR],
+     [LittleMonkeyL,PeopleL2,BigMonkeyL,right,LittleMonkeyR,PeopleR2,BigMonkeyR],1):-
+	% One missionary crosses left to right.
+  % One hum crosses left to right.
+
+	PeopleR2 is PeopleR+1,
+	PeopleL2 is PeopleL-1,
+	legal(LittleMonkeyL,PeopleL2,BigMonkeyL,LittleMonkeyR,PeopleR2,BigMonkeyR).
+
+move([LittleMonkeyL,PeopleL,BigMonkeyL,left,LittleMonkeyR,PeopleR,BigMonkeyR],
+     [LittleMonkeyL,PeopleL,BigMonkeyL2,right,LittleMonkeyR,PeopleR,BigMonkeyR2],1):-
+	% One cannibal crosses left to right.
+  % One bmun crosses left to right.
+    BigMonkeyR2 is BigMonkeyR + 1,
+	BigMonkeyL2 is BigMonkeyL-1,
+	legal(LittleMonkeyL,PeopleL,BigMonkeyL2,LittleMonkeyR,PeopleR,BigMonkeyR2).
+
+move([LittleMonkeyL,PeopleL,BigMonkeyL,right,LittleMonkeyR,PeopleR,BigMonkeyR],
+     [LittleMonkeyL,PeopleL2,BigMonkeyL,left,LittleMonkeyR,PeopleR2,BigMonkeyR],1):-
+	% Two missionaries cross right to left.
+  % Two hum cross right to left.
+	PeopleR2 is PeopleR-2,
+	PeopleL2 is PeopleL+2,
+	legal(LittleMonkeyL,PeopleL2,BigMonkeyL,LittleMonkeyR,PeopleR2,BigMonkeyR).
+
+move([LittleMonkeyL,PeopleL,BigMonkeyL,right,LittleMonkeyR,PeopleR,BigMonkeyR],
+     [LittleMonkeyL2,PeopleL,BigMonkeyL2,left,LittleMonkeyR2,PeopleR,BigMonkeyR2],1):-
+	% Two cannibals cross right to left.
+  % bmun lmun cross right to left.
+
+	LittleMonkeyR2 is LittleMonkeyR-1,
+	LittleMonkeyL2 is LittleMonkeyL+1,
+    BigMonkeyR2 is BigMonkeyR-1,
+    BigMonkeyL2 is BigMonkeyL+1,
+	legal(LittleMonkeyL2,PeopleL,BigMonkeyL2,LittleMonkeyR2,PeopleR,BigMonkeyR2).
+
+move([LittleMonkeyL,PeopleL,BigMonkeyL,right,LittleMonkeyR,PeopleR,BigMonkeyR],
+     [LittleMonkeyL2,PeopleL2,BigMonkeyL,left,LittleMonkeyR2,PeopleR2,BigMonkeyR],1):-
+	%  One missionary and one cannibal cross right to left.
+	LittleMonkeyR2 is LittleMonkeyR-1,
+	LittleMonkeyL2 is LittleMonkeyL+1,
+	PeopleR2 is PeopleR-1,
+	PeopleL2 is PeopleL+1,
+	legal(LittleMonkeyL2,PeopleL2,BigMonkeyL,LittleMonkeyR2,PeopleR2,BigMonkeyR).
+
+move([LittleMonkeyL,PeopleL,BigMonkeyL,right,LittleMonkeyR,PeopleR,BigMonkeyR],
+     [LittleMonkeyL,PeopleL2,BigMonkeyL,left,LittleMonkeyR,PeopleR2,BigMonkeyR],1):-
+	% One missionary crosses right to left.
+	PeopleR2 is PeopleR-1,
+	PeopleL2 is PeopleL+1,
+	legal(LittleMonkeyL,PeopleL2,BigMonkeyL,LittleMonkeyR,PeopleR2,BigMonkeyR).
+
+move([LittleMonkeyL,PeopleL,BigMonkeyL,right,LittleMonkeyR,PeopleR,BigMonkeyR],
+     [LittleMonkeyL,PeopleL,BigMonkeyL2,left,LittleMonkeyR,PeopleR,BigMonkeyR2],1):-
+	% One cannibal crosses right to left.
+  % One bmun crosses right to left.
+
+	BigMonkeyR2 is BigMonkeyR-1,
+	BigMonkeyL2 is BigMonkeyL+1,
+	legal(LittleMonkeyL,PeopleL,BigMonkeyL2,LittleMonkeyR,PeopleR,BigMonkeyR2).
+
+solve_astar(Node, Path/Cost):-
+  estimate(Node, Estimate),
+  astar([[Node]/0/Estimate], RevPath/Cost/_),
+  reverse(RevPath, Path).
+
+move_astar([Node|Path]/Cost/_, [NextNode,Node|Path]/NewCost/Est):-
+  move(Node, NextNode, StepCost),
+  \+ member(NextNode, Path),
+  NewCost is Cost + StepCost,
+  estimate(NextNode, Est).
+
+
+expand_astar(Path, ExpPaths):-
+  findall(NewPath, move_astar(Path,NewPath), ExpPaths).
+
+get_best([Path], Path):- !.
+
+get_best([Path1/Cost1/Est1,_/Cost2/Est2|Paths], BestPath):-
+  Cost1 + Est1 =< Cost2 + Est2, !,
+  get_best([Path1/Cost1/Est1|Paths], BestPath).
+
+get_best([_|Paths], BestPath):-
+  get_best(Paths, BestPath).
+
+astar(Paths, Path):-
+  get_best(Paths, Path),
+  Path = [Node|_]/_/_,
+  goal(Node).
+astar(Paths, SolutionPath) :-
+  get_best(Paths, BestPath),
+  select(BestPath, Paths, OtherPaths),
+  expand_astar(BestPath, ExpPaths),
+  append(OtherPaths, ExpPaths, NewPaths),
+  astar(NewPaths, SolutionPath).
+
+estimate(Node, Estimate):-
+  goal(G),
+  count_diffs(Node, G, Estimate).
+
+count_diffs(X,X,0):- !.
+count_diffs([H|T1],[H|T2],Result):-
+  count_diffs(T1,T2,Result).
+count_diffs([H1|T1],[H2|T2],Result):-
+  H1 \== H2,
+  count_diffs(T1,T2,Result1),
+  Result is Result1+1.
